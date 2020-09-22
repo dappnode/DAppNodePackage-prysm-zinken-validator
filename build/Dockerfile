@@ -1,6 +1,6 @@
 FROM debian:buster-slim as binary
 
-ARG TARGETARCH
+ARG TARGETARCH=amd64
 ARG UPSTREAM_VERSION
 ENV DOWNLOAD_URL https://github.com/prysmaticlabs/prysm/releases/download
 ENV BINARY_URL $DOWNLOAD_URL/$UPSTREAM_VERSION/beacon-chain-$UPSTREAM_VERSION-linux-$TARGETARCH
