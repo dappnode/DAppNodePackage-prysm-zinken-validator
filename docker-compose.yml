@@ -1,19 +1,19 @@
-version: "3.4"
+version: '3.4'
 services:
   prysm-medalla-beacon-chain.dnp.dappnode.eth:
-    image: "prysm-medalla-beacon-chain.dnp.dappnode.eth:1.0.0"
+    image: 'prysm-medalla-beacon-chain.dnp.dappnode.eth:1.0.7'
     build:
       context: ./build
       args:
-        - UPSTREAM_VERSION
+        UPSTREAM_VERSION: v1.0.0-alpha.26
     volumes:
-      - "data:/data"
+      - 'data:/data'
     ports:
-      - "13000"
-      - "12000"
+      - '13000'
+      - '12000'
     restart: always
     environment:
-      - "HTTP_WEB3PROVIDER=http://goerli-geth.dappnode:8545"
+      - 'HTTP_WEB3PROVIDER=http://goerli-geth.dappnode:8545'
       - EXTRA_OPTS
 volumes:
   data: {}
