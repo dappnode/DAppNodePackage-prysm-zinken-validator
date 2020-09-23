@@ -6,10 +6,9 @@ ENV DOWNLOAD_URL https://github.com/prysmaticlabs/prysm/releases/download
 ENV BINARY_URL $DOWNLOAD_URL/$UPSTREAM_VERSION/beacon-chain-$UPSTREAM_VERSION-linux-$TARGETARCH
 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt update && apt install --assume-yes --no-install-recommends wget && \
+    apt update && apt install --assume-yes --no-install-recommends wget ca-certificates && \
     wget -q $BINARY_URL -O /usr/local/bin/beacon-chain && \
     chmod +x  /usr/local/bin/beacon-chain
-
 
 FROM debian:buster-slim
 
