@@ -1,13 +1,13 @@
 FROM debian:buster-slim as binary
 
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 ARG UPSTREAM_VERSION
 ENV DOWNLOAD_URL https://github.com/prysmaticlabs/prysm/releases/download
-ENV BINARY_URL $DOWNLOAD_URL/$UPSTREAM_VERSION/beacon-chain-$UPSTREAM_VERSION-linux-$TARGETARCH
+ENV BINARY_URL $DOWNLOAD_URL/$UPSTREAM_VERSION
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt update && apt install --assume-yes --no-install-recommends wget ca-certificates && \
-    wget -q $BINARY_URL -O /usr/local/bin/beacon-chain && \
+    wget -q $BINARY_URL/beacon-chain-$UPSTREAM_VERSION-linux-${TARGETARCH:-amd64} -O /usr/local/bin/beacon-chain && \
     chmod +x  /usr/local/bin/beacon-chain
 
 FROM debian:buster-slim
@@ -16,13 +16,13 @@ FROM debian:buster-slim
 COPY --from=binary /usr/local/bin/beacon-chain /usr/local/bin/beacon-chain
 
 RUN apt update && \
-    apt install -y ca-certificates && \
+    apt install -y ca-certificates file && \
     rm -rf /var/lib/apt/lists/*
 
 ADD ssl /ssl/
 
 # Verify binary is in correct arch
-RUN beacon-chain --version
+RUN /usr/local/bin/beacon-chain --version
 
 
 ENTRYPOINT [ "sh", "-c", "exec beacon-chain --medalla --datadir=/data --log-file=/data/beacon-chain.log --rpc-host 0.0.0.0 --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --http-web3provider=$HTTP_WEB3PROVIDER $EXTRA_OPTS" ]
