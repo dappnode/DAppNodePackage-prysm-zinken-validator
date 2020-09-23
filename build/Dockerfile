@@ -24,4 +24,4 @@ ADD ssl /ssl/
 RUN /usr/local/bin/beacon-chain --version
 
 
-ENTRYPOINT [ "sh", "-c", "exec beacon-chain --medalla --datadir=/data --log-file=/data/beacon-chain.log --rpc-host 0.0.0.0 --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --http-web3provider=$HTTP_WEB3PROVIDER $EXTRA_OPTS" ]
+ENTRYPOINT [ "sh", "-c", "exec beacon-chain --spadina --datadir=/data --log-file=/data/beacon-chain.log --rpc-host 0.0.0.0 --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --http-web3provider=$HTTP_WEB3PROVIDER $EXTRA_OPTS" ]
