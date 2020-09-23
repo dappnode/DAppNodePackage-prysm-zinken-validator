@@ -12,6 +12,7 @@ jobs:
       DISPATCH_REPO: dappnode/DAppNodePackage-prysm-medalla-beacon-chain
       UPSTREAM_REPO: prysmaticlabs/prysm
     steps:
+    - uses: actions/checkout@v2
     - name: Get the tag
       id: get_tag
       run: |
