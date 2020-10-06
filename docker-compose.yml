@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   prysm-medalla-beacon-chain.dnp.dappnode.eth:
-    image: 'prysm-medalla-beacon-chain.dnp.dappnode.eth:1.0.8'
+    image: 'prysm-medalla-beacon-chain.dnp.dappnode.eth:1.0.9'
     build:
       context: ./build
       args:
