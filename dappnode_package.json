@@ -1,8 +1,8 @@
 {
-  "name": "prysm-medalla-beacon-chain.dnp.dappnode.eth",
+  "name": "prysm-zinken-beacon-chain.dnp.dappnode.eth",
   "version": "1.0.9",
   "upstreamVersion": "v1.0.0-alpha.28",
-  "shortDescription": "Prysm Medalla ETH2.0 Beacon chain",
+  "shortDescription": "Prysm zinken ETH2.0 Beacon chain",
   "description": "Prysm: a Go implementation of the Ethereum 2.0 Serenity protocol and open source project created by Prysmatic Labs. Beacon node which powers the beacon chain at the core of Ethereum 2.0",
   "type": "service",
   "architectures": [
@@ -16,10 +16,10 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-prysm-medalla-beacon-chain.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-prysm-zinken-beacon-chain.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-prysm-medalla-beacon-chain/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-prysm-zinken-beacon-chain/issues"
   },
   "requirements": {
     "minimumDappnodeVersion": "0.2.20"
@@ -29,7 +29,7 @@
   ],
   "links": {
     "homepage": "https://prylabs.net/participate?node=dappnode",
-    "readme": "https://github.com/dappnode/DAppNodePackage-prysm-medalla-beacon-chain",
+    "readme": "https://github.com/dappnode/DAppNodePackage-prysm-zinken-beacon-chain",
     "prysm": "https://prylabs.net"
   },
   "dependencies": {
