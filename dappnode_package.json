@@ -1,6 +1,6 @@
 {
   "name": "prysm-zinken-validator.dnp.dappnode.eth",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "upstreamVersion": "v1.0.0-alpha.28",
   "shortDescription": "Prysm zinken ETH2.0 Validator",
   "description": "Prysm: a Go implementation of the Ethereum 2.0 Serenity protocol and open source project created by Prysmatic Labs. Beacon node which powers the beacon chain at the core of Ethereum 2.0",
@@ -20,7 +20,10 @@
   "requirements": {
     "minimumDappnodeVersion": "0.2.20"
   },
-  "categories": ["Blockchain", "ETH2.0"],
+  "categories": [
+    "Blockchain",
+    "ETH2.0"
+  ],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-prysm-zinken-validator",
     "ui": "http://prysm-zinken-validator.dappnode/"
