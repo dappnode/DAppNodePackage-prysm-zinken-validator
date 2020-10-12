@@ -1,19 +1,17 @@
-version: '3.4'
+version: "3.4"
 services:
-  prysm-zinken-beacon-chain.dnp.dappnode.eth:
-    image: 'prysm-zinken-beacon-chain.dnp.dappnode.eth:1.0.9'
+  prysm-zinken-validator.dnp.dappnode.eth:
+    image: "prysm-zinken-validator.dnp.dappnode.eth:1.0.9"
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.0.0-alpha.27
+        UPSTREAM_VERSION: v1.0.0-alpha.29
     volumes:
-      - 'data:/data'
-    ports:
-      - '13000'
-      - '12000'
+      - "data:/data"
     restart: always
     environment:
-      - 'HTTP_WEB3PROVIDER=http://goerli-geth.dappnode:8545'
-      - EXTRA_OPTS
+      BEACON_RPC_GATEWAY_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:3500"
+      BEACON_RPC_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:4000"
+      EXTRA_OPTS:
 volumes:
   data: {}
