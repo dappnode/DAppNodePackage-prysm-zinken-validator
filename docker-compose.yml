@@ -1,17 +1,17 @@
-version: "3.4"
+version: '3.4'
 services:
   prysm-zinken-validator.dnp.dappnode.eth:
-    image: "prysm-zinken-validator.dnp.dappnode.eth:1.0.9"
+    image: 'prysm-zinken-validator.dnp.dappnode.eth:1.0.10'
     build:
       context: ./build
       args:
         UPSTREAM_VERSION: v1.0.0-alpha.29
     volumes:
-      - "data:/data"
+      - 'data:/data'
     restart: always
     environment:
-      BEACON_RPC_GATEWAY_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:3500"
-      BEACON_RPC_PROVIDER: "http://prysm-zinken-beacon-chain.dappnode:4000"
-      EXTRA_OPTS:
+      BEACON_RPC_GATEWAY_PROVIDER: 'http://prysm-zinken-beacon-chain.dappnode:3500'
+      BEACON_RPC_PROVIDER: 'http://prysm-zinken-beacon-chain.dappnode:4000'
+      EXTRA_OPTS: null
 volumes:
   data: {}
